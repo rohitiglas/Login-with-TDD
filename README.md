@@ -40,8 +40,9 @@ https://github.com/rohitiglas/RNTesting/blob/master/src/Screens/LoginScreen/Logi
 https://github.com/rohitiglas/RNTesting/blob/master/src/Screens/LoginScreen/styles.js
 
 
+<img src=“https://user-images.githubusercontent.com/17780617/92900801-9ea4bc00-f43d-11ea-8fdd-a63337397d9e.png”>
 
-https://user-images.githubusercontent.com/17780617/92900801-9ea4bc00-f43d-11ea-8fdd-a63337397d9e.png
+
 
 
 
