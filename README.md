@@ -1,5 +1,9 @@
 <h1> React-Native Testing </h1>
 
+### Login Screen 
+
+<img src="https://user-images.githubusercontent.com/17780617/92988351-57bfd080-f4e8-11ea-98d6-4cbaf08305ce.png" />
+
 ### Component Testing in React Native
 
 
@@ -169,9 +173,7 @@ export default StyleSheet.create({
 
 
 
-### Login Screen 
 
-<img src="https://user-images.githubusercontent.com/17780617/92988351-57bfd080-f4e8-11ea-98d6-4cbaf08305ce.png" />
 
 
 
