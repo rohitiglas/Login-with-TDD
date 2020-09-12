@@ -56,7 +56,7 @@ Let’s go !
 Let’s write our first, very basic component test that will let us test if our component renders correctly. This is what we call Snapshot Testing.
 Snapshot Testing basically help us identify unknown UI changes made to our component.
 Here’s what the snapshot test looks like -
-
+```
 import 'react-native';
 import React from 'react';
 import App from '../App';
@@ -67,6 +67,8 @@ describe('Login Form', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+
+```
 
 As you can see, we’ve used the render method provided by react-native-testing-library to generate our snapshot. It deeply renders given React element and returns helper methods to query the output components.
 
