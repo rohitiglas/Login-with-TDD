@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Alert, Button, TextInput, Text, View, StyleSheet} from 'react-native';
+import {Alert, Button, TextInput, Text, View, StyleSheet,TouchableOpacity,StatusBar} from 'react-native';
 import styles from "./styles";
 
 export const ValidationErrors = {
@@ -25,36 +25,39 @@ const Login = () => {
         }
     };
     return (
-        <View style={styles.container}>
-            {validationError.length !== 0 && (
-                <Text testID={'text-error'} style={styles.errorText}>
-                    {validationError}
-                </Text>
-            )}
+            <View style={styles.mainContainer}>
+                {validationError.length !== 0 && (
+                    <Text testID={'text-error'} style={styles.errorText}>
+                        {validationError}
+                    </Text>
+                )}
 
-            <TextInput
-                testID={'input-username'}
-                value={userName}
-                onChangeText={(text) => setUserName(text)}
-                placeholder={'Username'}
-                style={styles.input}
-            />
-            <TextInput
-                testID={'input-password'}
-                value={password}
-                onChangeText={(text) => setPassword(text)}
-                placeholder={'Password'}
-                secureTextEntry={true}
-                style={styles.input}
-            />
+                <View style={styles.loginContainer}>
+                    <StatusBar barStyle="light-content"/>
+                <TextInput
+                    testID={'input-username'}
+                    value={userName}
+                    onChangeText={(text) => setUserName(text)}
+                    placeholder={'UserName'}
+                    style={styles.input}
+                />
+                <TextInput
+                    testID={'input-password'}
+                    value={password}
+                    onChangeText={(text) => setPassword(text)}
+                    placeholder={'Password'}
+                    secureTextEntry={true}
+                    style={styles.input}
+                />
+                <TouchableOpacity
+                    testID={'submit-button'}
+                    style={styles.buttonContainer}
+                                  onPress={onLogin}>
+                    <Text  style={styles.buttonText}>LOGIN</Text>
+                </TouchableOpacity>
+                </View>
+            </View>
 
-            <Button
-                testID={'submit-button'}
-                title={'Login'}
-                style={styles.input}
-                onPress={onLogin}
-            />
-        </View>
     );
 };
 
