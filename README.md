@@ -14,19 +14,20 @@ https://github.com/rohitiglas/RNTesting/blob/master/package.json
 
 
 
-### Create folder in your project name src=>Screens=>LoginScreen
+### Create folder in your project name
+src=>Screens=>LoginScreen
 
 ### Create Component Name Login.js in LoginScreen folder
 
 ### Copy the code and paste your Login.js file from
 https://github.com/rohitiglas/RNTesting/blob/master/src/Screens/LoginScreen/Login.js
 
-# Create another file for style name style.js in your LoginScreen Folder and copy & paste the code from 
+### Create another file for style name style.js in your LoginScreen Folder and copy & paste the code from 
 https://github.com/rohitiglas/RNTesting/blob/master/src/Screens/LoginScreen/styles.js
 
 
 
-# Login Screen 
+### Login Screen 
 
 <img src="https://user-images.githubusercontent.com/17780617/92900801-9ea4bc00-f43d-11ea-8fdd-a63337397d9e.png" />
 
@@ -36,22 +37,19 @@ https://github.com/rohitiglas/RNTesting/blob/master/src/Screens/LoginScreen/styl
 
 
 For our Login Screen, let’s say we have the following business requirements -
-# Test Case 1 : Login Screen (i.e. the component) should display (render) correctly (SnapshotTesting)
+<ul>
+<li>Test Case 1 : Login Screen (i.e. the component) should display (render) correctly (SnapshotTesting)</li>
+<li>Test Case 2 : user submits empty form (no username or password provided)</li>
+<li>Test Case 3 : . user submits form with either username only</li>
+  <li>Test Case 4 : . user submits form with either password only</li>
+  <li>Test Case 5 : On press of submit button (LOGIN), it should show an Alert dialog ( as we’re not doing any server calls in this post).</li>
+</ul>
 
-Login Screen should show validation error if -
-
-# Test Case 2 : user submits empty form (no username or password provided) ✅
-
-# Test Case 3 : . user submits form with either username only
-
-# Test Case 4 : . user submits form with either password only
-
-# Test Case 5 : On press of submit button (LOGIN), it should show an Alert dialog ( as we’re not doing any server calls in this post). ✅
 
 We can write one test for each of these requirements.
 Let’s go !
 
-# UI Testing
+### UI Testing
 
 Let’s write our first, very basic component test that will let us test if our component renders correctly. This is what we call Snapshot Testing.
 Snapshot Testing basically help us identify unknown UI changes made to our component.
@@ -97,7 +95,7 @@ it('renders correctly', () => {
 
 Let’s run our test and see what our Snapshot really looks like. Since this is our first time running the snapshot test, and it is the ONLY test in our project, we can simply do so by running the following shell command -
 
-# yarn test
+### yarn test
 
 If all goes well, you should see a ‘snapshots’ folder created under the __snapshot__ directory, containing the snapshot (component tree).
 
