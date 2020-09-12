@@ -275,33 +275,41 @@ it("shows 'form-fields-empty' error if user submits without username or password
     });
 ```
 
-### Test Case 2 : user submits empty form (no username or password provided)
-So in this case User simple press Login button without entering UserName and Password field then We should show a validation error message like Form is empty.
+### Test Case 3 : . user submits form with  username only
+So in this case User simple press Login button with entering UserName only then We should show a validation error message like Password field is empty.
 Let's start write test case
 ```
-it("shows 'form-fields-empty' error if user submits without username or password", () => {
+it('shows error if user submits only a username', () => {
         const {getByTestId} = wrapper;
+        const userNameText = getByTestId('input-username');
+        const enteredUserName = 'RohitBansal';
+        fireEvent(userNameText, 'onChangeText', enteredUserName);
+
         const submitButton = getByTestId('submit-button');
         fireEvent(submitButton, 'onPress');
         const validationError = getByTestId('text-error');
+
         expect(validationError).toBeTruthy();
-        expect(validationError.props.children)
-            .toBe(ValidationErrors.FormEmpty);
+        expect(validationError.props.children).toBe(ValidationErrors.PasswordEmpty);
     });
 ```
 
-### Test Case 2 : user submits empty form (no username or password provided)
-So in this case User simple press Login button without entering UserName and Password field then We should show a validation error message like Form is empty.
+### Test Case 4 : . user submits form with either password only
+So in this case User simple press Login button with entering Password field only then We should show a validation error message like UserName field is empty.
 Let's start write test case
 ```
-it("shows 'form-fields-empty' error if user submits without username or password", () => {
+it('shows error if user submits only a password', () => {
         const {getByTestId} = wrapper;
+        const passwordText = getByTestId('input-password');
+        const password = '12345678';
+        fireEvent(passwordText, 'onChangeText', password);
+
         const submitButton = getByTestId('submit-button');
         fireEvent(submitButton, 'onPress');
         const validationError = getByTestId('text-error');
+
         expect(validationError).toBeTruthy();
-        expect(validationError.props.children)
-            .toBe(ValidationErrors.FormEmpty);
+        expect(validationError.props.children).toBe(ValidationErrors.UsernameEmpty);
     });
 ```
 
