@@ -6,7 +6,7 @@
 To install this library as a dev-dependency, run the following command in your terminal - 
 
 
-``` # yarn add — dev @testing-library/react-native ```
+``` yarn add — dev @testing-library/react-native ```
 
 ### Here’s what your package.json file should look like - 
 
@@ -96,7 +96,7 @@ it('renders correctly', () => {
 
 Let’s run our test and see what our Snapshot really looks like. Since this is our first time running the snapshot test, and it is the ONLY test in our project, we can simply do so by running the following shell command -
 
-```  ### yarn test ```  (For run the test cases of project)     
+```   yarn test ```  (For run the test cases of project)     
 
 If all goes well, you should see a ‘snapshots’ folder created under the __snapshot__ directory, containing the snapshot (component tree).
 
@@ -110,7 +110,7 @@ Let’s update the ‘backgroundColor’ property of our ‘container’ style t
 
 As you can see, Jest expected a backgroundColor of ‘#ecf0f1’ but received the value ‘white’ in its place. We can run yarn test -u in order to update our snapshot since our change was intentional. But please be wary of updating snapshots — always make sure you don’t update snapshots without knowing what caused the UI changes.
 So Now update your snapshot using this command: 
-```  # yarn test -u ```   (For run and update snapshot  the test cases of project)
+```   yarn test -u ```   (For run and update snapshot  the test cases of project)
 
 When we update our snapshot (to make sure our background changes are reflected in our snapshot), we get the following message -
 <img src="https://user-images.githubusercontent.com/17780617/92905300-2cce7180-f441-11ea-9b28-07d76ae9845f.png" />
