@@ -257,5 +257,21 @@ When we update our snapshot (to make sure our background changes are reflected i
 <img src="https://user-images.githubusercontent.com/17780617/92905300-2cce7180-f441-11ea-9b28-07d76ae9845f.png" />
 
 
+### UI testing part has been completed now we will move to <h1> Interaction testing </h1>
 
 
+### Test Case 2 : user submits empty form (no username or password provided)
+So in this case User simple press Login button without entering UserName and Password field so We should show a validation error message like Form is empty.
+Let's start write test case
+```
+ it("shows 'form-fields-empty' error if user submits without username or password", () => {
+        const {getByTestId} = wrapper;
+        const submitButton = getByTestId('submit-button');
+        fireEvent(submitButton, 'onPress');
+        const validationError = getByTestId('text-error');
+        expect(validationError).toBeTruthy();
+        expect(validationError.props.children)
+            .toBe(ValidationErrors.FormEmpty);
+    });
+    
+    ```
