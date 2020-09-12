@@ -2,7 +2,7 @@
 # Component Testing in React Native
 
 
-# To install this library as a dev-dependency, run the following command in your terminal -
+```To install this library as a dev-dependency, run the following command in your terminal - ```
 
 
 # yarn add — dev @testing-library/react-native
@@ -76,6 +76,7 @@ For now, we’ve created the component wrapper only in 1 test. But we’ll need 
 
 We also want each test to be isolated from each other — thus, we need to perform un-mounting (“clean up”) after each test. This can be done by using afterEach.
 
+```
 import {render, cleanup} from '@testing-library/react-native';
 describe('Login Form', () => {
   let wrapper;
@@ -90,6 +91,8 @@ it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+
+```
 
 
 Let’s run our test and see what our Snapshot really looks like. Since this is our first time running the snapshot test, and it is the ONLY test in our project, we can simply do so by running the following shell command -
