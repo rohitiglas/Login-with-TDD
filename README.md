@@ -2,10 +2,10 @@
 ### Component Testing in React Native
 
 
-```To install this library as a dev-dependency, run the following command in your terminal - ```
+To install this library as a dev-dependency, run the following command in your terminal - 
 
 
-# yarn add — dev @testing-library/react-native
+``` # yarn add — dev @testing-library/react-native ```
 
 ### Here’s what your package.json file should look like - 
 
