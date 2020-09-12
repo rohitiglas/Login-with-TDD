@@ -273,3 +273,34 @@ Let's start write test case
         expect(validationError.props.children)
             .toBe(ValidationErrors.FormEmpty);
     });
+    
+    ### Test Case 2 : user submits empty form (no username or password provided)
+So in this case User simple press Login button without entering UserName and Password field then We should show a validation error message like Form is empty.
+Let's start write test case
+```
+ it("shows 'form-fields-empty' error if user submits without username or password", () => {
+        const {getByTestId} = wrapper;
+        const submitButton = getByTestId('submit-button');
+        fireEvent(submitButton, 'onPress');
+        const validationError = getByTestId('text-error');
+        expect(validationError).toBeTruthy();
+        expect(validationError.props.children)
+            .toBe(ValidationErrors.FormEmpty);
+    });
+    
+     ### Test Case 3 : User submits form with either username only
+  So in this case User simple press Login button with UserName only then We should show a validation error message like Password is empty.
+Let's start write test case
+ it('shows error if user submits only a username', () => {
+        const {getByTestId} = wrapper;
+        const userNameText = getByTestId('input-username');
+        const enteredUserName = 'RohitBansal';
+        fireEvent(userNameText, 'onChangeText', enteredUserName);
+
+        const submitButton = getByTestId('submit-button');
+        fireEvent(submitButton, 'onPress');
+        const validationError = getByTestId('text-error');
+
+        expect(validationError).toBeTruthy();
+        expect(validationError.props.children).toBe(ValidationErrors.PasswordEmpty);
+    });
