@@ -150,7 +150,7 @@ export default StyleSheet.create({
 
 ### Login Screen 
 
-<img src="https://user-images.githubusercontent.com/17780617/92900801-9ea4bc00-f43d-11ea-8fdd-a63337397d9e.png" />
+<img src="https://user-images.githubusercontent.com/17780617/92988351-57bfd080-f4e8-11ea-98d6-4cbaf08305ce.png" />
 
 
 
