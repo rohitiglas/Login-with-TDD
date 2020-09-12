@@ -1,5 +1,5 @@
 # RNTesting
-# Component Testing in React Native
+### Component Testing in React Native
 
 
 ```To install this library as a dev-dependency, run the following command in your terminal - ```
@@ -7,18 +7,18 @@
 
 # yarn add — dev @testing-library/react-native
 
-# Here’s what your package.json file should look like - 
+### Here’s what your package.json file should look like - 
 
 https://github.com/rohitiglas/RNTesting/blob/master/package.json
 
 
 
 
-# Create folder in your project name src=>Screens=>LoginScreen
+### Create folder in your project name src=>Screens=>LoginScreen
 
-# Create Component Name Login.js in LoginScreen folder
+### Create Component Name Login.js in LoginScreen folder
 
-# Copy the code and paste your Login.js file from
+### Copy the code and paste your Login.js file from
 https://github.com/rohitiglas/RNTesting/blob/master/src/Screens/LoginScreen/Login.js
 
 # Create another file for style name style.js in your LoginScreen Folder and copy & paste the code from 
