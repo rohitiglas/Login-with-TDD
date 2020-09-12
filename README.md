@@ -275,69 +275,8 @@ Let's start write test case
     });
     ```
     
-   # Test Case 3 : . User submits form with either username only 
-   So in this case User enter only UserName and press Login button then then We should show a validation error message like Password is empty.
    
-   ```
-it('shows error if user submits only a username', () => {
-        const {getByTestId} = wrapper;
-        const userNameText = getByTestId('input-username');
-        const enteredUserName = 'RohitBansal';
-        fireEvent(userNameText, 'onChangeText', enteredUserName);
-
-        const submitButton = getByTestId('submit-button');
-        fireEvent(submitButton, 'onPress');
-        const validationError = getByTestId('text-error');
-
-        expect(validationError).toBeTruthy();
-        expect(validationError.props.children).toBe(ValidationErrors.PasswordEmpty);
-    });
-
-```
 
 
-### Test Case 4 : User submits form with either password only
-So in this case User enter only password and press Login button then then We should show a validation error message like UserName is empty.
-```
-it('shows error if user submits only a password', () => {
-        const {getByTestId} = wrapper;
-        const passwordText = getByTestId('input-password');
-        const password = '12345678';
-        fireEvent(passwordText, 'onChangeText', password);
 
-        const submitButton = getByTestId('submit-button');
-        fireEvent(submitButton, 'onPress');
-        const validationError = getByTestId('text-error');
-
-        expect(validationError).toBeTruthy();
-        expect(validationError.props.children).toBe(ValidationErrors.UsernameEmpty);
-    });
-    
-    ```
-
-  ### Test Case 5 : On press of submit button (LOGIN), it should show an Alert dialog ( as we’re not doing any server calls in this post)  
-  
-  So in this case User enter UserName and  password and press Login button then then We should show a Succesful alert message.
-  ```
-   it('should show Alert dialog if form validation successful', async () => {
-        const {getByTestId} = wrapper;
-
-        // Enter Username
-        const userNameText = getByTestId('input-username');
-        const enteredUserName = 'RohitBansal';
-        fireEvent(userNameText, 'onChangeText', enteredUserName);
-
-        // Enter Password
-        const passwordText = getByTestId('input-password');
-        const enteredPassword = '123456';
-        fireEvent(passwordText, 'onChangeText', enteredPassword);
-
-        // Press Submit Button
-        const submitButton = getByTestId('submit-button');
-        fireEvent.press(submitButton);
-
-        // Check if Alert.alert() has been called
-        const alertSpy = jest.spyOn(Alert, 'alert');
-        expect(alertSpy).toHaveBeenCalled();
-    });
-    ```
+ 
