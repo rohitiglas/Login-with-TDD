@@ -3,6 +3,7 @@ import React from 'react';
 import Signup,{ValidationErrors} from "./Signup";
 import {render,cleanup,fireEvent} from "@testing-library/react-native";
 import {Alert} from "react-native";
+import {emailRegex, mobileRegex, passwordRegex} from "../../Regex/regex";
 
 jest.mock('react-native/Libraries/Alert/Alert', () => ({
     alert: jest.fn(),
@@ -34,6 +35,26 @@ describe('Signup Form',()=>{
         expect(validationError.props.children)
             .toBe(ValidationErrors.FormEmpty);
     });
+
+    it("Regex Validation for Email",()=>{
+        const email='rohitiglas2@gmail.com';
+        const emailRegexValidation=emailRegex.test(email);
+        expect(emailRegexValidation).toBeTruthy();
+    });
+
+    it("Regex Validation for Mobile",()=>{
+        const mobile='9643198239';
+        const mobileRegexValidation=mobileRegex.test(mobile);
+        expect(mobileRegexValidation).toBeTruthy();
+    });
+
+    it("Regex Validation for Password",()=>{
+        const password='Abc@12345';
+        const passwordRegexValidation=passwordRegex.test(password);
+        expect(passwordRegexValidation).toBeTruthy();
+    });
+
+
 
     it('Show error if user left Name field',()=>{
         const {getByTestId}=wrapper;

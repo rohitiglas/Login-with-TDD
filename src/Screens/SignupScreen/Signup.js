@@ -12,6 +12,11 @@ export const ValidationErrors = {
     PasswordEmpty: 'Password cannot be blank',
     ConfirmPasswordEmpty: 'Confirm Password cannot be blank',
     PasswordMatch: 'Password should be match',
+    ValidEmail: 'Please enter valid Email',
+    ValidMobile: 'Please enter valid mobile',
+    ValidPassword: 'Password should contain min 8 char with one special, one small , one Capital & one Number.',
+    PasswordShouldMatch:'Password does not match'
+
 };
 const Signup = () => {
     const [name, setName] = useState('');
@@ -97,21 +102,25 @@ const Signup = () => {
                     style={styles.input}
                 />
                 {validateRegex && !validateRegex['input-email']&& email.length>0 &&
-                  <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
-                  Please enter valid Email 
+                  <Text
+                      testID={'input-email-error'}
+                      style={{top:-20,  alignItems:'flex-start', color:'red'}}>
+                      {ValidationErrors.ValidEmail}
                 </Text>
                 }
               
                 <TextInput
                     testID={'input-mobile'}
+                    maxLength={10}
+                    keyboardType = 'numeric'
                     value={mobileNumber}
                     onChangeText={(text) => regexValidation('input-mobile', text)}
                     placeholder={'Mobile Number'}
                     style={styles.input}
                 />
-                {validateRegex && !validateRegex['input-mobile']&& mobileNumber >0 &&
+                {validateRegex && !validateRegex['input-mobile']&& mobileNumber.length >0 &&
                  <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
-                    Please enter valid mobile 
+                     {ValidationErrors.ValidMobile}
                </Text>}
                 <TextInput
                     testID={'input-username'}
@@ -130,7 +139,7 @@ const Signup = () => {
                 />
                 {validateRegex && !validateRegex['input-password']&& password.length >0 &&
                  <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
-                    Password should contain min 8 char with one special, one small , one Capital & one Number.
+                     {ValidationErrors.ValidPassword}
                </Text>
                 }
                 <TextInput
@@ -143,7 +152,7 @@ const Signup = () => {
                 />
                 {validateRegex && !validateRegex['input-mobile']&& confirmPassword.length >0 && password === confirmPassword &&
                <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
-                    Password does not match
+                   {ValidationErrors.PasswordShouldMatch}
                </Text>}
                 <TouchableOpacity
                     testID={'submit-button'}

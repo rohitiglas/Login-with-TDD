@@ -60,6 +60,8 @@ exports[`Signup Form Should display renders correctly 1`] = `
     />
     <TextInput
       allowFontScaling={true}
+      keyboardType="numeric"
+      maxLength={10}
       onChangeText={[Function]}
       placeholder="Mobile Number"
       rejectResponderTermination={true}
