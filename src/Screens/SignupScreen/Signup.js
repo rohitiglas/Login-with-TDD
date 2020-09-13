@@ -7,7 +7,7 @@ export const ValidationErrors = {
     UsernameEmpty: 'Username cannot be blank',
     PasswordEmpty: 'Password cannot be blank',
 };
-const Login = ({navigation}) => {
+const Signup = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [validationError, setValidationError] = useState('');
@@ -24,20 +24,16 @@ const Login = ({navigation}) => {
             Alert.alert('Credentials', `${userName} + ${password}`);
         }
     };
-
-    const onSignup = () => {
-        navigation.push('Signup');
-    };
     return (
-            <View style={styles.mainContainer}>
-                {validationError.length !== 0 && (
-                    <Text testID={'text-error'} style={styles.errorText}>
-                        {validationError}
-                    </Text>
-                )}
+        <View style={styles.mainContainer}>
+            {validationError.length !== 0 && (
+                <Text testID={'text-error'} style={styles.errorText}>
+                    {validationError}
+                </Text>
+            )}
 
-                <View style={styles.loginContainer}>
-                    <StatusBar barStyle="light-content"/>
+            <View style={styles.loginContainer}>
+                <StatusBar barStyle="light-content"/>
                 <TextInput
                     testID={'input-username'}
                     value={userName}
@@ -56,20 +52,13 @@ const Login = ({navigation}) => {
                 <TouchableOpacity
                     testID={'submit-button'}
                     style={styles.buttonContainer}
-                                  onPress={onLogin}>
+                    onPress={onLogin}>
                     <Text  style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
-
-                    <TouchableOpacity
-                        testID={'signup-button'}
-                        style={styles.signupContainer}
-                        onPress={onSignup}>
-                        <Text  style={styles.buttonText}>Signup</Text>
-                    </TouchableOpacity>
-                </View>
             </View>
+        </View>
 
     );
 };
 
-export default Login;
+export default Signup;

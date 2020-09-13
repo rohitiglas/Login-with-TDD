@@ -32,13 +32,6 @@ export default StyleSheet.create({
         backgroundColor: '#2980b6',
         paddingVertical: 15
     },
-    signupContainer:{
-        margin:20,
-        width:'80%',
-        borderRadius:20,
-        backgroundColor: '#2980b6',
-        paddingVertical: 15
-    },
     buttonText:{
         color: '#fff',
         textAlign: 'center',
