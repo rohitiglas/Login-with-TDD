@@ -4,12 +4,21 @@ import styles from "./styles";
 
 export const ValidationErrors = {
     FormEmpty: 'Form fields cannot be blank',
+    NameEmpty: 'Name cannot be blank',
+    EmailEmpty: 'Email cannot be blank',
+    MobileNumberEmpty: 'Mobile number cannot be blank',
     UsernameEmpty: 'Username cannot be blank',
     PasswordEmpty: 'Password cannot be blank',
+    ConfirmPasswordEmpty: 'Confirm Password cannot be blank',
+    PasswordMatch: 'Password should be match',
 };
 const Signup = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [validationError, setValidationError] = useState('');
 
     const onLogin = () => {
@@ -35,10 +44,24 @@ const Signup = () => {
             <View style={styles.loginContainer}>
                 <StatusBar barStyle="light-content"/>
                 <TextInput
-                    testID={'input-username'}
-                    value={userName}
-                    onChangeText={(text) => setUserName(text)}
-                    placeholder={'UserName'}
+                    testID={'input-name'}
+                    value={name}
+                    onChangeText={(text) => setName(text)}
+                    placeholder={'Name'}
+                    style={styles.input}
+                />
+                <TextInput
+                    testID={'input-email'}
+                    value={email}
+                    onChangeText={(text) => setEmail(text)}
+                    placeholder={'Email Id'}
+                    style={styles.input}
+                />
+                <TextInput
+                    testID={'input-mobile'}
+                    value={mobileNumber}
+                    onChangeText={(text) => setMobileNumber(text)}
+                    placeholder={'Mobile Number'}
                     style={styles.input}
                 />
                 <TextInput
@@ -49,11 +72,19 @@ const Signup = () => {
                     secureTextEntry={true}
                     style={styles.input}
                 />
+                <TextInput
+                    testID={'input-confirm-password'}
+                    value={confirmPassword}
+                    onChangeText={(text) => setConfirmPassword(text)}
+                    placeholder={'Confirm Password'}
+                    secureTextEntry={true}
+                    style={styles.input}
+                />
                 <TouchableOpacity
                     testID={'submit-button'}
                     style={styles.buttonContainer}
                     onPress={onLogin}>
-                    <Text  style={styles.buttonText}>LOGIN</Text>
+                    <Text  style={styles.buttonText}>Register</Text>
                 </TouchableOpacity>
             </View>
         </View>
