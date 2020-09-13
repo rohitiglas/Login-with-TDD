@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Alert, Button, TextInput, Text, View, StyleSheet,TouchableOpacity,StatusBar} from 'react-native';
+import * as regex from '../../Regex/regex'
 import styles from "./styles";
 
 export const ValidationErrors = {
@@ -20,6 +21,7 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [validationError, setValidationError] = useState('');
+    const [validateRegex, setValidateRegex]= useState({})
 
     const onLogin = () => {
         if (isFormEmpty()) {
@@ -47,6 +49,27 @@ const Signup = () => {
             mobileNumber.length===0 &&
             userName.length===0 && password.length===0);
     }
+
+   const regexValidation=(type, value)=>{
+    if(type==='input-email')
+    {
+        setEmail(value);
+        setValidateRegex({...validateRegex, [type]: regex.emailRegex.test(value)})
+    } 
+    if(type==='input-mobile'){
+        setMobileNumber(value)
+        setValidateRegex({...validateRegex, [type]: regex.mobileRegex.test(value)})
+    } 
+    if(type==='input-password'){
+        setPassword(value)
+        setValidateRegex({...validateRegex, [type]: regex.passwordRegex.test(value)})
+    } 
+    if(type==='input-confirm-password'){
+        setConfirmPassword(value)
+        setValidateRegex({...validateRegex, [type]: regex.passwordRegex.test(value)})
+    } 
+   }
+
     return (
         <View style={styles.mainContainer}>
             {validationError.length !== 0 && (
@@ -64,20 +87,32 @@ const Signup = () => {
                     placeholder={'Name'}
                     style={styles.input}
                 />
+             
+
                 <TextInput
                     testID={'input-email'}
                     value={email}
-                    onChangeText={(text) => setEmail(text)}
+                    onChangeText={(text) => regexValidation('input-email',text)}
                     placeholder={'Email Id'}
                     style={styles.input}
                 />
+                {validateRegex && !validateRegex['input-email']&& email.length>0 &&
+                  <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
+                  Please enter valid Email 
+                </Text>
+                }
+              
                 <TextInput
                     testID={'input-mobile'}
                     value={mobileNumber}
-                    onChangeText={(text) => setMobileNumber(text)}
+                    onChangeText={(text) => regexValidation('input-mobile', text)}
                     placeholder={'Mobile Number'}
                     style={styles.input}
                 />
+                {validateRegex && !validateRegex['input-mobile']&& mobileNumber >0 &&
+                 <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
+                    Please enter valid mobile 
+               </Text>}
                 <TextInput
                     testID={'input-username'}
                     value={userName}
@@ -88,19 +123,28 @@ const Signup = () => {
                 <TextInput
                     testID={'input-password'}
                     value={password}
-                    onChangeText={(text) => setPassword(text)}
+                    onChangeText={(text) => regexValidation('input-password', text)}
                     placeholder={'Password'}
                     secureTextEntry={true}
                     style={styles.input}
                 />
+                {validateRegex && !validateRegex['input-password']&& password.length >0 &&
+                 <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
+                    Password should contain min 8 char with one special, one small , one Capital & one Number.
+               </Text>
+                }
                 <TextInput
                     testID={'input-confirm-password'}
                     value={confirmPassword}
-                    onChangeText={(text) => setConfirmPassword(text)}
+                    onChangeText={(text) => regexValidation('input-confirm-password', text)}
                     placeholder={'Confirm Password'}
                     secureTextEntry={true}
                     style={styles.input}
                 />
+                {validateRegex && !validateRegex['input-mobile']&& confirmPassword.length >0 && password === confirmPassword &&
+               <Text style={{top:-20,  alignItems:'flex-start', color:'red'}}>
+                    Password does not match
+               </Text>}
                 <TouchableOpacity
                     testID={'submit-button'}
                     style={styles.buttonContainer}
