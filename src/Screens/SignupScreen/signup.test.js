@@ -28,7 +28,7 @@ describe('Signup Form',()=>{
     it("shows 'form-fields-empty' error if All field empty", () => {
         const {getByTestId} = wrapper;
         const submitButton = getByTestId('submit-button');
-        fireEvent(submitButton, 'onPress');
+        fireEvent.press(submitButton);
         const validationError = getByTestId('text-error');
         expect(validationError).toBeTruthy();
         expect(validationError.props.children)
