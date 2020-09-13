@@ -1,26 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1599812678831" clover="3.2.0">
-  <project timestamp="1599812678831" name="All files">
-    <metrics statements="17" coveredstatements="8" conditionals="10" coveredconditionals="1" methods="4" coveredmethods="1" elements="31" coveredelements="10" complexity="0" loc="17" ncloc="17" packages="1" files="1" classes="1"/>
-    <file name="App.js" path="/Users/rohitbansal/WebstormProjects/TestingReactNative/App.js">
-      <metrics statements="17" coveredstatements="8" conditionals="10" coveredconditionals="1" methods="4" coveredmethods="1"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="15" count="0" type="cond" truecount="0" falsecount="4"/>
-      <line num="16" count="0" type="stmt"/>
-      <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="18" count="0" type="stmt"/>
-      <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="23" count="0" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="37" count="0" type="stmt"/>
-      <line num="44" count="0" type="stmt"/>
-      <line num="60" count="1" type="stmt"/>
-    </file>
+<coverage generated="1599993595104" clover="3.2.0">
+  <project timestamp="1599993595105" name="All files">
+    <metrics statements="55" coveredstatements="54" conditionals="33" coveredconditionals="32" methods="15" coveredmethods="14" elements="103" coveredelements="100" complexity="0" loc="55" ncloc="55" packages="3" files="5" classes="5"/>
+    <package name="TestingReactNative">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="App.js" path="/Users/rohitbansal/WebstormProjects/TestingReactNative/App.js">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="TestingReactNative.src.Screens.LoginScreen">
+      <metrics statements="18" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="4"/>
+      <file name="Login.js" path="/Users/rohitbansal/WebstormProjects/TestingReactNative/src/Screens/LoginScreen/Login.js">
+        <metrics statements="18" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+      </file>
+      <file name="styles.js" path="/Users/rohitbansal/WebstormProjects/TestingReactNative/src/Screens/LoginScreen/styles.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="TestingReactNative.src.Screens.SignupScreen">
+      <metrics statements="34" coveredstatements="34" conditionals="21" coveredconditionals="21" methods="9" coveredmethods="9"/>
+      <file name="Signup.js" path="/Users/rohitbansal/WebstormProjects/TestingReactNative/src/Screens/SignupScreen/Signup.js">
+        <metrics statements="34" coveredstatements="34" conditionals="21" coveredconditionals="21" methods="9" coveredmethods="9"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="52" type="stmt"/>
+        <line num="17" count="52" type="stmt"/>
+        <line num="18" count="52" type="stmt"/>
+        <line num="19" count="52" type="stmt"/>
+        <line num="20" count="52" type="stmt"/>
+        <line num="21" count="52" type="stmt"/>
+        <line num="22" count="52" type="stmt"/>
+        <line num="24" count="52" type="stmt"/>
+        <line num="25" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="45" count="52" type="stmt"/>
+        <line num="46" count="8" type="cond" truecount="5" falsecount="0"/>
+        <line num="50" count="52" type="stmt"/>
+        <line num="63" count="6" type="stmt"/>
+        <line num="70" count="6" type="stmt"/>
+        <line num="77" count="6" type="stmt"/>
+        <line num="84" count="6" type="stmt"/>
+        <line num="91" count="6" type="stmt"/>
+        <line num="99" count="6" type="stmt"/>
+      </file>
+      <file name="styles.js" path="/Users/rohitbansal/WebstormProjects/TestingReactNative/src/Screens/SignupScreen/styles.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
   </project>
 </coverage>

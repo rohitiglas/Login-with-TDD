@@ -22,17 +22,31 @@ const Signup = () => {
     const [validationError, setValidationError] = useState('');
 
     const onLogin = () => {
-        if (userName.length === 0 && password.length === 0) {
+        if (isFormEmpty()) {
             setValidationError(ValidationErrors.FormEmpty);
+        } else if (name.length === 0) {
+            setValidationError(ValidationErrors.NameEmpty);
+        } else if (email.length === 0) {
+            setValidationError(ValidationErrors.EmailEmpty);
+        } else if (mobileNumber.length === 0) {
+            setValidationError(ValidationErrors.MobileNumberEmpty);
         } else if (userName.length === 0) {
             setValidationError(ValidationErrors.UsernameEmpty);
         } else if (password.length === 0) {
             setValidationError(ValidationErrors.PasswordEmpty);
+        } else if (confirmPassword.length === 0) {
+            setValidationError(ValidationErrors.ConfirmPasswordEmpty);
         }
         else {
             Alert.alert('Credentials', `${userName} + ${password}`);
         }
     };
+
+    const isFormEmpty=()=>{
+        return (name.length===0 && email.length===0 &&
+            mobileNumber.length===0 &&
+            userName.length===0 && password.length===0);
+    }
     return (
         <View style={styles.mainContainer}>
             {validationError.length !== 0 && (
@@ -62,6 +76,13 @@ const Signup = () => {
                     value={mobileNumber}
                     onChangeText={(text) => setMobileNumber(text)}
                     placeholder={'Mobile Number'}
+                    style={styles.input}
+                />
+                <TextInput
+                    testID={'input-username'}
+                    value={userName}
+                    onChangeText={(text) => setUserName(text)}
+                    placeholder={'UserName'}
                     style={styles.input}
                 />
                 <TextInput
