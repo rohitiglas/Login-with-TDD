@@ -2,10 +2,11 @@
 
 <h3>
   Quick Summary
+  </h3>
   <p>
     Testing gives confidence in written code. In the context of this article, ‘testing’ means ‘automated testing’. Without automated testing, it is significantly harder to ensure the quality of a web application of significant complexity. Fails caused by automated testing may lead to more bugs in production. In this article, we’re going to show how React developers can quickly start testing their app with the React Testing Library (RTL).
   </p>
-</h3>
+
 
 ### Login Screen 
 
