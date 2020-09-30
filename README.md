@@ -6,6 +6,21 @@
   <p>
     Testing gives confidence in written code. In the context of this article, ‘testing’ means ‘automated testing’. Without automated testing, it is significantly harder to ensure the quality of a web application of significant complexity. Fails caused by automated testing may lead to more bugs in production. In this article, we’re going to show how React developers can quickly start testing their app with the React Testing Library (RTL).
   </p>
+  
+  <h3> Why You Should Test Your Code </h3>
+  <p>
+  Before shipping your software to end-users, you first have to confirm that it is working as expected. In other words, the app should satisfy its project specifications.
+  
+  Just as it is important to test our project as a whole before shipping it to end-users, it’s also essential to keep testing our code during the lifetime of a project. This is necessary for a number of reasons. We may make updates to our application or refactor some parts of our code. A third-party library may undergo a breaking change. Even the browser that is running our web application may undergo breaking changes. In some cases, something stops working for no apparent reason — things could go wrong unexpectedly. Thus, it is necessary to test our code regularly for the lifetime of a project.
+
+Broadly speaking, there are manual and automated software tests. In a manual test, a real user performs some action on our application to verify that they work correctly. This kind of test is less reliable when repeated several times because it’s easy for the tester to miss some details between test runs.
+
+In an automated test, however, a test script is executed by a machine. With a test script, we can be sure that whatever details we set in the script will remain unchanged on every test run.
+
+This kind of test gives us the benefits of being predictable and fast, such that we can quickly find and fix bugs in our code.
+
+Having seen the necessity of testing our code, the next logical question is, what sort of automated tests should we write for our code? Let’s quickly go over a few of them.
+</p>
 
 
 ### Login Screen 
