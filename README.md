@@ -1,5 +1,12 @@
 <h1> React-Native Testing </h1>
 
+<h3>
+  Quick Summary
+  <p>
+    Testing gives confidence in written code. In the context of this article, ‘testing’ means ‘automated testing’. Without automated testing, it is significantly harder to ensure the quality of a web application of significant complexity. Fails caused by automated testing may lead to more bugs in production. In this article, we’re going to show how React developers can quickly start testing their app with the React Testing Library (RTL).
+  </p>
+</h3>
+
 ### Login Screen 
 
 <img src="https://user-images.githubusercontent.com/17780617/92988351-57bfd080-f4e8-11ea-98d6-4cbaf08305ce.png" />
