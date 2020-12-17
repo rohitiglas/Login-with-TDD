@@ -33,7 +33,7 @@ Having seen the necessity of testing our code, the next logical question is, wha
 To install this library as a dev-dependency, run the following command in your terminal - 
 
 
-``` yarn add — dev @testing-library/react-native ```
+``` yarn add --dev @testing-library/react-native ```
 
 ### Here’s what your package.json file should look like - 
 
